@@ -1,0 +1,24 @@
+Para exportar el proyecto de Next como un archivo estáticos
+
+1.- No usar rutas "api" en el proyecto
+
+2.- Incluir en next.config.js la carpeta donde se realizará la exportación
+    const nextConfig = {
+      output: 'export',
+    }
+
+3.- Desactivar la optimización de imagenes bajo demanda
+    const nextConfig = {
+      images: {
+        unoptimized: true,
+      },
+    }
+
+4.- Si debemos traer información de una API externa podemos usar getStaticProps()
+
+5.- exporta el proyecto con: npm run build
+
+6.- El proyeto estático se guardará en una carpeta llamada "out"
+
+NOTA:
+No usar "npm run dev" y "npm run start" con ( output: 'export', unoptimized: true )
